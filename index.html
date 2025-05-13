@@ -8,7 +8,7 @@
     html, body {
       margin: 0;
       padding: 0;
-      background: black;
+      background-color: black;
       font-family: "Times New Roman", serif;
       overflow-y: auto;
     }
@@ -27,30 +27,6 @@
       width: 100%;
       max-width: 100vw;
       overflow: visible;
-      background: linear-gradient(to bottom, #1a1a1a 0%, black 100%); /* justerad bakgrund */
-    }
-
-    .mirror-image {
-      width: 100%;
-      height: auto;
-      display: block;
-      filter: blur(20px);
-      opacity: 0.4;
-      transform: scaleY(-1);
-    }
-
-    .mirror-top {
-      position: absolute;
-      top: -20%;
-      left: 0;
-      z-index: 1;
-    }
-
-    .mirror-bottom {
-      position: absolute;
-      bottom: -20%;
-      left: 0;
-      z-index: 1;
     }
 
     .background-image {
@@ -58,6 +34,30 @@
       display: block;
       position: relative;
       z-index: 2;
+    }
+
+    /* Övre gradient (kan justeras om annan ton önskas) */
+    .image-wrapper::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 20%;
+      background: linear-gradient(to top, #3d1f20, black);
+      z-index: 3;
+    }
+
+    /* Nedre gradient som matchar bildens nedre färg */
+    .image-wrapper::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 20%;
+      background: linear-gradient(to bottom, #3d1f20, black);
+      z-index: 3;
     }
 
     .link-text {
@@ -69,7 +69,7 @@
       color: white;
       text-decoration: none;
       text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
-      z-index: 3;
+      z-index: 4;
     }
 
     footer {
@@ -91,9 +91,7 @@
 <body>
   <div class="container">
     <div class="image-wrapper">
-      <img class="mirror-image mirror-top" src="munhalsa.png" alt="" />
       <img class="background-image" src="munhalsa.png" alt="Dental decay" />
-      <img class="mirror-image mirror-bottom" src="munhalsa.png" alt="" />
       <a class="link-text" href="https://www.vardhandboken.se/vard-och-behandling/basal-och-preventiv-omvardnad/munhalsa/oversikt/">
         Hjälp mig ⭢
       </a>
