@@ -10,13 +10,16 @@
       padding: 0;
       background-color: black;
       font-family: "Times New Roman", serif;
-      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .container {
       position: relative;
       width: 100%;
-      max-width: 100vw;
+      flex: 1 0 auto;
     }
 
     .background-image {
@@ -58,6 +61,7 @@
     }
 
     footer {
+      flex-shrink: 0;
       text-align: center;
       font-size: 3.5vw;
       color: rgba(255, 255, 255, 0.5);
