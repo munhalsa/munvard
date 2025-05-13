@@ -36,29 +36,28 @@
       z-index: 2;
     }
 
-    /* Blödande topgradient */
-    .image-wrapper::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 15%;
-      background: linear-gradient(to bottom, black, transparent);
-      z-index: 3;
-    }
+   .image-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -15%;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), black);
+  z-index: 1;
+}
 
-    /* Blödande bottengradient */
-    .image-wrapper::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 15%;
-      background: linear-gradient(to top, black, transparent);
-      z-index: 3;
-    }
+.image-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: -15%;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), black);
+  z-index: 1;
+}
+
 
     .link-text {
       position: absolute;
