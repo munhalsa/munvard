@@ -23,10 +23,10 @@
     }
 
     .image-wrapper {
-      position: relative;
       width: 100%;
       max-width: 100vw;
-      overflow: visible;
+      overflow: hidden;
+      position: relative;
     }
 
     .background-image {
@@ -34,30 +34,22 @@
       display: block;
       position: relative;
       z-index: 2;
-    }
 
-    /* Top-fade som tonar ut BILDEN uppåt */
-    .image-wrapper::before {
-      content: "";
-      position: absolute;
-      top: -15%;
-      left: 0;
-      width: 100%;
-      height: 15%;
-      background: linear-gradient(to top, transparent, black);
-      z-index: 1;
-    }
-
-    /* Bottom-fade som tonar ut BILDEN nedåt */
-    .image-wrapper::after {
-      content: "";
-      position: absolute;
-      bottom: -15%;
-      left: 0;
-      width: 100%;
-      height: 15%;
-      background: linear-gradient(to bottom, transparent, black);
-      z-index: 1;
+      /* Här sker magin: bilden maskas så att den tonar i topp och botten */
+      -webkit-mask-image: linear-gradient(to bottom,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%);
+      mask-image: linear-gradient(to bottom,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%);
+      -webkit-mask-size: 100% 100%;
+      mask-size: 100% 100%;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
     }
 
     .link-text {
