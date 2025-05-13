@@ -14,10 +14,18 @@
       position: relative;
       width: 100%;
       height: 100vh;
-      background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_Oqg4Hi1JedoB9uOjCi05IsK821dR1MLbow&s");
-      background-size: cover;
-      text-decoration: none;
+      background-image: url("C80EB768-9B10-4FA8-A5B8-98AB7EAAAAC6.jpeg"); /* använd din uppladdade bild */
+      background-size: contain; /* visa hela bilden */
+      background-repeat: no-repeat;
       background-position: center;
+      background-color: black; /* fyller ut runt bilden */
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,0) 60%, rgba(0,0,0,0.7) 100%);
+      pointer-events: none;
     }
 
     .link-text {
@@ -26,16 +34,18 @@
       transform: translateX(-50%);
       bottom: 10%;
       font-family: "Times New Roman", serif;
-      font-size: 38px; 
+      font-size: 38px;
       color: white;
       background-color: transparent;
       padding-bottom: 4px;
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <div class="overlay"></div> <!-- Fade-effekt -->
     <a class="link-text" href="https://www.vardhandboken.se/vard-och-behandling/basal-och-preventiv-omvardnad/munhalsa/">
       Hjälp mig ⭢
     </a>
